@@ -5,14 +5,14 @@ An extension of json: but one that (naively) handles dates.
 
 ## Installation
 
-You can use pip. (Note that it uses `setuptools`!)
+You can use pip. (Note that it uses `setuptools`)
 ```
 pip install git+https://github.com/sujaymansingh/jsond
 ```
 
 ## Simple Usage
 
-I have a date!
+I have a date.
 ```python
 >>> import datetime
 >>> my_date = datetime.datetime(2011, 3, 15, 0, 0, 0)
