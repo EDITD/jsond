@@ -7,7 +7,7 @@ An extension of json: but one that (naively) handles dates.
 
 You can use pip. (Note that it uses `setuptools`)
 ```
-pip install git+https://github.com/sujaymansingh/jsond
+pip install git+https://github.com/EDITD/jsond
 ```
 
 ## Simple Usage
