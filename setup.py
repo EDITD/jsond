@@ -1,8 +1,6 @@
 import setuptools
 
 
-# How do we keep this in sync with requirements.pip?
-#
 REQUIREMENTS = [
     "nose==1.3.0",
     "python-dateutil==1.5",
