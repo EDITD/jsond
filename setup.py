@@ -10,7 +10,7 @@ REQUIREMENTS = [
 if __name__ == "__main__":
     setuptools.setup(
         name="jsond",
-        version="0.0.1",
+        version="1.0.0",
         author="EDITD",
         author_email="engineering@editd.com",
         packages=setuptools.find_packages(),
