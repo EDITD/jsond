@@ -58,3 +58,22 @@ class TestSimple(unittest.TestCase):
             json_decoded["relevant_date"],
             "datetime:2011-03-15T00:00:00"
         )
+
+    def test_json_serialisable_object(self):
+        """Ensure that we can prepare an object to be json serialised (despite
+        it having `datetime` values!) and vice-versa.
+        """
+        dangerous_object = {"date": datetime.datetime(2011, 3, 15),
+                            "name": "some string key"}
+        with self.assertRaises(TypeError):
+            # We can't json serialise this!
+            json.dumps(dangerous_object)
+
+        safe_object = jsond.to_json_serialisable_object(dangerous_object)
+        # But now we can jsond serialise it.
+        json.dumps(safe_object)
+
+        # And we should be able to get the original object back.
+        final_object = jsond.from_json_serialisable_object(safe_object)
+
+        self.assertEqual(dangerous_object, final_object)
