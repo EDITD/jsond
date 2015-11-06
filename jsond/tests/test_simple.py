@@ -34,11 +34,11 @@ class TestSimple(unittest.TestCase):
             "relevant_date": relevant_date
         }
         encoded = jsond.dumps(to_encode)
-        
+
         # And get the same date back when we decode.
         #
         decoded = jsond.loads(encoded)
-        self.assertEqual(decoded["relevant_date"] , relevant_date)
+        self.assertEqual(decoded["relevant_date"], relevant_date)
 
     def test_safe_for_json(self):
         """When we jsond.dumps something, it should be safe to decode in json.
@@ -54,4 +54,7 @@ class TestSimple(unittest.TestCase):
         #
         json_decoded = json.loads(encoded)
         self.assertIsInstance(json_decoded["relevant_date"], basestring)
-        self.assertEqual(json_decoded["relevant_date"], "datetime:2011-03-15T00:00:00")
+        self.assertEqual(
+            json_decoded["relevant_date"],
+            "datetime:2011-03-15T00:00:00"
+        )

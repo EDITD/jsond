@@ -14,7 +14,7 @@ class JSONDateEncoder(json.JSONEncoder):
             # We want to ensure that we have a datetime.
             #
             obj = datetime.datetime.combine(obj, datetime.time.min)
-        
+
         if isinstance(obj, datetime.datetime):
             return 'datetime:' + obj.isoformat()
 
@@ -52,7 +52,7 @@ class JSONDateDecoder(json.JSONDecoder):
             return d
 
         return data
-    
+
     def decode(self, json_string):
         # First decode it using json.
         #
@@ -61,7 +61,6 @@ class JSONDateDecoder(json.JSONDecoder):
         # Now check decoded object for any potential datetime objects within.
         #
         return self._decode(decoded_obj)
-
 
 
 def dumps(*args, **kwargs):
