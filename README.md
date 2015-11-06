@@ -65,3 +65,40 @@ Also, `jsond` will produce output that won't break `json`.
 u'datetime:2011-03-15T00:00:00'
 >>>
 ```
+
+
+## Other usage
+
+Often message-processing systems will use json internally to serialise messages.
+
+But that means that dates can't (easily) be used.
+
+To help with this, we provide two functions: `from_json_serialisable_object`
+and `to_json_serialisable_object`.
+
+For those who prefer spelling serialise with a 'z', there are two 'alias'
+functions for convenience.
+
+- `from_json_serializable_object` -> `from_json_serialisable_object`
+- `to_json_serializable_object` -> `to_json_serialisable_object`
+
+```python
+def handle_message(original_message):
+    # At this stage original_message will be a dict, list etc, but it won't
+    # have any datetime objects as it was json-serialisable.
+    # We might have prepared it earlier with jsond.dumps, but that means that
+    # we have 'datetime:...' string instead of datetime objects.
+    message = jsond.from_json_serialisable_object(original_message)
+
+    # message will now have datetime objects
+    # We can do whatever processing we want.
+
+    # Now we have to put message back on the queue. We have to output an
+    # object that the broker will put back onto the queue etc.
+    # So we can't have datetime objects. But we want to output an object
+    # (not an encoded string).
+    new_message = jsond.to_json_serialisable_object(message)
+
+    # Now we can output/emit/etc new_message.
+    return new_message
+```

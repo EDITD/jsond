@@ -81,3 +81,49 @@ def dump(*args, **kwargs):
 def load(*args, **kwargs):
     kwargs["cls"] = JSONDateDecoder
     return json.load(*args, **kwargs)
+
+
+def to_json_serialisable_object(obj):
+    """We use this when:
+    - we have an object that can't be serialised with json
+    - we want the object to be serialised with json!
+
+    Thus we pass it through a jsond and json to get back an object that
+    is the same as the original, just with all `datetime` values replaced
+    with string values of the form 'datetime: $original_datetime'.
+
+    >>> to_json_serialisable_object({'date': datetime.datetime(2010, 1, 1)})
+    {u'date': u'datetime:2010-01-01T00:00:00'}
+    """
+    obj_as_string = dumps(obj)
+
+    # We want something of the same structure as the original object.
+    # So we take the string, and json.loads it to get that back.
+    return json.loads(obj_as_string)
+
+
+def from_json_serialisable_object(obj):
+    """We use this when:
+    - we have an object that was json serialisable
+    - it may have a 'datetime:$date' value
+    - we want to convert all those string values back into `datetime` values.
+
+    I.e. this is the opposite of to_json_serialisable_object.
+    >>> obj = {u'date': u'datetime:2010-01-01T00:00:00'}
+    >>> from_json_serialisable_object(obj)
+    {u'date': datetime.datetime(2010, 1, 1, 0, 0)}
+    """
+    obj_as_string = json.dumps(obj)
+    return loads(obj_as_string)
+
+
+def to_json_serializable_object(obj):
+    """Support alternative spellings.
+    """
+    return to_json_serialisable_object(obj)
+
+
+def from_json_serializable_object(obj):
+    """Support alternative spellings.
+    """
+    return from_json_serializable_object(obj)
