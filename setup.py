@@ -2,8 +2,8 @@ import setuptools
 
 
 REQUIREMENTS = [
-    "nose==1.3.0",
-    "python-dateutil==1.5",
+    "nose>=1.3,<1.4",
+    "python-dateutil>=1.5,<1.6",
 ]
 
 
