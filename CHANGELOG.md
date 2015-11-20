@@ -1,5 +1,8 @@
 ## <Unreleased latest version>
 
+
+## v1.2.0
+
 - Specify requirements in ranges rather than specific ones.
 
 
