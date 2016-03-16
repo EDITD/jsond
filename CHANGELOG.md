@@ -1,5 +1,9 @@
 ## <Unreleased latest version>
 
+## v1.3.0
+
+- Support Python 2 and Python 3
+
 
 ## v1.2.0
 

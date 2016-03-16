@@ -17,7 +17,7 @@ if __name__ == "__main__":
 
     setuptools.setup(
         name="jsond",
-        version="1.2.0",
+        version="1.3.0",
         author="EDITD",
         author_email="engineering@editd.com",
         packages=setuptools.find_packages(),
