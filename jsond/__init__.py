@@ -39,7 +39,7 @@ class JSONDateDecoder(json.JSONDecoder):
             return s
 
     def _decode(self, data):
-        if isinstance(data, basestring) and data.startswith('datetime:'):
+        if isinstance(data, str) and data.startswith('datetime:'):
             return self.str_to_datetime(data)
 
         if isinstance(data, list):
@@ -47,7 +47,7 @@ class JSONDateDecoder(json.JSONDecoder):
 
         if isinstance(data, dict):
             d = {}
-            for key, value in data.iteritems():
+            for key, value in data.items():
                 d[key] = self._decode(value)
             return d
 
