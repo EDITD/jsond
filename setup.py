@@ -4,7 +4,7 @@ import sys
 
 REQUIREMENTS = [
     "nose>=1.3,<1.4",
-    "python-dateutil>=1.5,<1.6",
+    "python-dateutil>=2.0.0,<3.0.0",
 ]
 
 
