@@ -1,13 +1,20 @@
 import setuptools
+import sys
 
 
 REQUIREMENTS = [
     "nose>=1.3,<1.4",
-    "python-dateutil>=1.5,<1.6",
+    "python-dateutil>=2.0.0,<3.0.0",
+    "six>=1.10.0,<2",
 ]
 
 
 if __name__ == "__main__":
+    if len(sys.argv) > 1 and sys.argv[1] == "requirements":
+        for req in REQUIREMENTS:
+            print(req)
+        sys.exit(0)
+
     setuptools.setup(
         name="jsond",
         version="1.2.0",

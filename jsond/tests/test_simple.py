@@ -3,6 +3,7 @@ import json
 import unittest
 
 import jsond
+import six
 
 
 class TestSimple(unittest.TestCase):
@@ -53,7 +54,7 @@ class TestSimple(unittest.TestCase):
         # The only difference is that json will treat the date as a string.
         #
         json_decoded = json.loads(encoded)
-        self.assertIsInstance(json_decoded["relevant_date"], basestring)
+        self.assertIsInstance(json_decoded["relevant_date"], six.string_types)
         self.assertEqual(
             json_decoded["relevant_date"],
             "datetime:2011-03-15T00:00:00"

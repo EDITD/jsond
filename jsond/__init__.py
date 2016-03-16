@@ -5,6 +5,7 @@ import json
 import datetime
 
 import dateutil.parser
+import six
 
 
 class JSONDateEncoder(json.JSONEncoder):
@@ -39,7 +40,7 @@ class JSONDateDecoder(json.JSONDecoder):
             return s
 
     def _decode(self, data):
-        if isinstance(data, basestring) and data.startswith('datetime:'):
+        if isinstance(data, six.string_types) and data.startswith('datetime:'):
             return self.str_to_datetime(data)
 
         if isinstance(data, list):
@@ -47,7 +48,7 @@ class JSONDateDecoder(json.JSONDecoder):
 
         if isinstance(data, dict):
             d = {}
-            for key, value in data.iteritems():
+            for key, value in six.iteritems(data):
                 d[key] = self._decode(value)
             return d
 
