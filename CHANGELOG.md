@@ -4,6 +4,7 @@
 
 - Remove dependency on nose from main distribution
 - Update packaging information
+- Add continuous delivery/integration with TravisCI
 
 
 ## v1.3.0

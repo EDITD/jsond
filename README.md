@@ -1,5 +1,9 @@
 # jsond
 
+[![Build Status](https://travis-ci.org/EDITD/jsond.svg?branch=master)](https://travis-ci.org/EDITD/jsond)
+[![Pypi Version](https://img.shields.io/pypi/v/jsond.svg)](https://pypi.org/project/jsond/)
+[![Python Versions](https://img.shields.io/pypi/pyversions/jsond.svg)](https://pypi.org/project/jsond/)
+
 An extension of json: but one that (naively) handles dates.
 
 
