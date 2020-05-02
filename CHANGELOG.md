@@ -1,5 +1,10 @@
 ## <Unreleased latest version>
 
+## v1.5.0
+
+- Remove support for Python 3.4
+
+
 ## v1.4.0
 
 - Remove dependency on nose from main distribution
