@@ -1,3 +1,5 @@
 jsond.egg-info
 *.pyc
 .*.swp
+.tox/
+dist/
