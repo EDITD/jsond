@@ -9,7 +9,7 @@ REQUIREMENTS = [
 ]
 
 DEV_REQUIREMENTS = [
-    "nose>=1.3,<1.4",
+    "nose",
 ]
 
 
