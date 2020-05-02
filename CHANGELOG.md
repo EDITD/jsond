@@ -1,5 +1,10 @@
 ## <Unreleased latest version>
 
+## v1.4.0
+
+- Remove dependency on nose from main distribution
+
+
 ## v1.3.0
 
 - Support Python 2 and Python 3

@@ -10,6 +10,13 @@ You can use pip. (Note that it uses `setuptools`)
 pip install jsond
 ```
 
+To also install development tools use:
+```
+pip install jsond[dev]
+# or
+pip install -e .[dev]
+```
+
 ## Simple Usage
 
 I have a date.
