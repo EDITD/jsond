@@ -3,6 +3,7 @@
 ## v1.4.0
 
 - Remove dependency on nose from main distribution
+- Update packaging information
 
 
 ## v1.3.0
