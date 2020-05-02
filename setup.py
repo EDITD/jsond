@@ -9,7 +9,7 @@ REQUIREMENTS = [
 ]
 
 DEV_REQUIREMENTS = [
-    "nose>=1.3,<1.4",
+    "nose",
 ]
 
 
@@ -56,14 +56,13 @@ if __name__ == "__main__":
             "Operating System :: OS Independent",
             "Programming Language :: Python :: 2",
             "Programming Language :: Python :: 3",
-            "Programming Language :: Python :: 3.4",
             "Programming Language :: Python :: 3.5",
             "Programming Language :: Python :: 3.6",
             "Programming Language :: Python :: 3.7",
             "Programming Language :: Python :: 3.8",
             "Topic :: Software Development :: Libraries :: Python Modules",
         ],
-        python_requires=">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*",
+        python_requires=">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*",
         install_requires=REQUIREMENTS,
         extras_require={
             "dev": DEV_REQUIREMENTS,
